@@ -27,5 +27,15 @@
         </div>
     </div>
 
+    <div th:fragment="list-all" class="container body-content">
+        <div th:if="${jobs} and ${jobs.size()}">
+            <table th:each="job : ${jobs}" class="job-listing">
+                <tr th:each="entry : ${job}">
+                    <td th:text="${#strings.capitalizeWords(entry.key)} + ': ' + ${#strings.capitalizeWords(entry.value)}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
 </body>
 </html>

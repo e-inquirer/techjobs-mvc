@@ -30,7 +30,7 @@ public class SearchController {
 
         // Basic method to handle search "All"
         if (searchType.equals("all")) {
-            jobs = JobData.findByValue(searchType);
+            jobs = JobData.findByValue(searchTerm);
         // Search type set to "Position Type", "Employer", "Location", "Skill"
         } else {
             jobs = JobData.findByColumnAndValue(searchType, searchTerm);
