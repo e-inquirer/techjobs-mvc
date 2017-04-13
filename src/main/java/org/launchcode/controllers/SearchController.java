@@ -38,6 +38,7 @@ public class SearchController {
 
         model.addAttribute("columns", ListController.columnChoices);
         model.addAttribute("jobs", jobs);
+        model.addAttribute("result", jobs.size() + "Result(s)");
 
         return "search";
     }
