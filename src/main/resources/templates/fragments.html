@@ -27,9 +27,10 @@
         </div>
     </div>
 
-    <div th:fragment="list-all" class="container body-content">
+    <div th:fragment="list-all" class="job-listing">
+        <h1 th:text="${#strings.capitalizeWords(result)}"></h1>
         <div th:if="${jobs} and ${jobs.size()}">
-            <table th:each="job : ${jobs}" class="job-listing">
+            <table class="job-listing" th:each="job : ${jobs}">
                 <tr th:each="entry : ${job}">
                     <td th:text="${#strings.capitalizeWords(entry.key)} + ': ' + ${#strings.capitalizeWords(entry.value)}"></td>
                 </tr>
